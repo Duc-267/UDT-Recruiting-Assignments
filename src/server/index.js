@@ -2,7 +2,7 @@ import express from 'express'
 import * as React from 'react'
 import ReactDOM from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server';
-import App from '../client/index.js'
+import App from '../client/App.js'
 
 const app = express();
 const port = 3000;

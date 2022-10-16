@@ -1,14 +1,14 @@
-import Home from './Home';
-import Calculator from './Calculator';
+import Home from './components/Home';
+import History from './components/History';
 
 const routes = [
     {
-        path: '/',
-        component: Home,
+        path: '/history',
+        component: History,
     },
     {
-        path: '/calculator',
-        component: Calculator,
+        path: '/',
+        component: Home,
     },
 ];
 

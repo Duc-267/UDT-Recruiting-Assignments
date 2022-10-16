@@ -6,11 +6,11 @@ export default function App () {
   return (
     <div className='container'>
     <Routes>
-        {routes.map(({ path, component: C }) => (
+        {routes.map(({ path, component: Component }) => (
         <Route
             key={path}
             path={path}
-            element={<C />}
+            element={<Component />}
         />
         ))}
     </Routes>
