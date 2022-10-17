@@ -20,7 +20,7 @@ app.get('*', (req, res) => {
   <!DOCTYPE html>
   <html>
     <head>
-      <title>SSR with React Router</title>
+      <title>UDT Recruiting Assignments</title>
     </head>
     <body>
       <div id="app">${markup}</div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import routes from './routes';
+import routes from './Routes';
 import { Route, Routes } from 'react-router-dom';
 
 export default function App() {

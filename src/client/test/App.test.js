@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import Home from '../components/Home';
+import Home from '../pages/Home';
 
 describe('Home tests', () => {
    it('should contains the heading 1', () => {

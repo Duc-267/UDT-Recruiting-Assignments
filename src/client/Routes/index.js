@@ -1,5 +1,4 @@
-import Home from './components/Home';
-import History from './components/History';
+import { History, Home } from '../pages';
 
 const routes = [
    {
