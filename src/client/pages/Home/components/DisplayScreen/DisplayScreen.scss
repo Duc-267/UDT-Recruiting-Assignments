@@ -45,10 +45,18 @@
     height: 100%;
     display: flex;
     font-size: 80px;
-    font-weight: 200;
     margin-right: 20px;
     align-items: flex-end;
     border: none;
     background-color: transparent;
     color: #fff;
+
+    .number {
+        font-weight: 200;
+    }
+    
+    .active { 
+        background: rgba(101, 209, 249, 0.855) 
+    }
 }
+

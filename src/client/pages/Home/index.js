@@ -6,9 +6,8 @@ import './Home.scss';
 const Home = () => {
    const [display, setDisplay] = useState('0');
    const [expression, setExpression] = useState('');
-   console.log('🚀 ~ file: index.js ~ line 9 ~ Home ~ expression', expression);
 
-   const isOperator = (item) => {
+   const isOperator = function (item) {
       return ['+', '-', '*', '/'].includes(item);
    };
 
@@ -76,10 +75,17 @@ const Home = () => {
       }
    };
 
+   const handleChangeNumber = function (index, number) {
+      const displayArray = display.split('');
+      displayArray[index] = number;
+      setDisplay(displayArray.join(''));
+      setExpression(expression.slice(0, -display.length) + displayArray.join(''));
+   };
+
    return (
       <div className="container">
          <div className="calculator-wrapper">
-            <DisplayScreen result={display} />
+            <DisplayScreen handleChangeNumber={handleChangeNumber} result={display} />
             <Keypad
                addNumberToExpression={addNumberToExpression}
                calculateResult={calculateResult}
@@ -88,7 +94,7 @@ const Home = () => {
                addPointToNumber={addPointToNumber}
                setPercentage={setPercentage}
                setPlusMinus={setPlusMinus}
-               isAllClear={display === '0'}
+               isAllClear={expression.length === 0}
             />
          </div>
       </div>
