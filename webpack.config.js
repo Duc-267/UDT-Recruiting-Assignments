@@ -45,7 +45,7 @@ const clientConfig = {
   target: 'web',
   name: 'client',
   entry: {
-    client: path.resolve(srcDir, 'client/App.js'),
+    client: path.resolve(srcDir, 'client/client.js'),
   },
   output: {
     publicPath: '/',

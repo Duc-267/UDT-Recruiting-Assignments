@@ -1,34 +1,15 @@
 import express from 'express';
-import * as React from 'react';
-import ReactDOM from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
-import App from '../client/App.js';
+import route from './route';
+import path from 'path';
 
 const app = express();
 const port = 3000;
 
 app.use(express.static('build'));
 app.use(express.static('dist'));
+app.use(express.static(path.join(__dirname)));
 
-app.get('*', (req, res) => {
-   const markup = ReactDOM.renderToString(
-      <StaticRouter location={req.url}>
-         <App />
-      </StaticRouter>,
-   );
-   res.send(`
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>UDT Recruiting Assignments</title>
-      <link rel="stylesheet" href="../server.css">
-    </head>
-    <body>
-      <div id="app">${markup}</div>
-    </body>
-  </html>
-`);
-});
+route(app);
 
 app.listen(port, () => {
    console.log(`Server is listening on port ${port}`);
