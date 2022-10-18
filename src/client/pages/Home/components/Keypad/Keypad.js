@@ -3,40 +3,49 @@ import Button from '../Button/Button';
 import Row from '../Row/Row';
 import { ButtonColors } from '../../../../utils';
 
-const Keypad = ({ addToExpression, calculateResult, isAllClear, addOperator }) => {
+const Keypad = ({
+   addNumberToExpression,
+   calculateResult,
+   isAllClear,
+   addOperator,
+   clearExpression,
+   addPointToNumber,
+   setPercentage,
+   setPlusMinus,
+}) => {
    return (
       <div className="keypad">
          <Row>
             <Button
                symbol={isAllClear ? 'AC' : 'C'}
                color={ButtonColors.DARK_GRAY}
-               handleClick={addToExpression}
+               handleClick={clearExpression}
             />
-            <Button symbol="+/-" color={ButtonColors.DARK_GRAY} handleClick={addToExpression} />
-            <Button symbol="%" color={ButtonColors.DARK_GRAY} handleClick={addToExpression} />
-            <Button symbol="÷" color={ButtonColors.ORANGE} handleClick={addOperator} />
+            <Button symbol="+/-" color={ButtonColors.DARK_GRAY} handleClick={setPlusMinus} />
+            <Button symbol="%" color={ButtonColors.DARK_GRAY} handleClick={setPercentage} />
+            <Button symbol="÷" color={ButtonColors.ORANGE} handleClick={() => addOperator('/')} />
          </Row>
          <Row>
-            <Button symbol="7" />
-            <Button symbol="8" />
-            <Button symbol="9" />
-            <Button symbol="X" color={ButtonColors.ORANGE} handleClick={addOperator} />
+            <Button symbol="7" handleClick={addNumberToExpression} />
+            <Button symbol="8" handleClick={addNumberToExpression} />
+            <Button symbol="9" handleClick={addNumberToExpression} />
+            <Button symbol="X" color={ButtonColors.ORANGE} handleClick={() => addOperator('*')} />
          </Row>
          <Row>
-            <Button symbol="4" handleClick={addToExpression} />
-            <Button symbol="5" handleClick={addToExpression} />
-            <Button symbol="6" handleClick={addToExpression} />
-            <Button symbol="-" color={ButtonColors.ORANGE} handleClick={addOperator} />
+            <Button symbol="4" handleClick={addNumberToExpression} />
+            <Button symbol="5" handleClick={addNumberToExpression} />
+            <Button symbol="6" handleClick={addNumberToExpression} />
+            <Button symbol="-" color={ButtonColors.ORANGE} handleClick={() => addOperator('-')} />
          </Row>
          <Row>
-            <Button symbol="1" handleClick={addToExpression} />
-            <Button symbol="2" handleClick={addToExpression} />
-            <Button symbol="3" handleClick={addToExpression} />
-            <Button symbol="+" color={ButtonColors.ORANGE} handleClick={addOperator} />
+            <Button symbol="1" handleClick={addNumberToExpression} />
+            <Button symbol="2" handleClick={addNumberToExpression} />
+            <Button symbol="3" handleClick={addNumberToExpression} />
+            <Button symbol="+" color={ButtonColors.ORANGE} handleClick={() => addOperator('+')} />
          </Row>
          <Row>
-            <Button symbol="0" handleClick={addToExpression} />
-            <Button symbol="," handleClick={addToExpression} />
+            <Button symbol="0" handleClick={addNumberToExpression} />
+            <Button symbol="," handleClick={addPointToNumber} />
             <Button symbol="=" color={ButtonColors.ORANGE} handleClick={calculateResult} />
          </Row>
       </div>
