@@ -21,6 +21,7 @@ app.get('*', (req, res) => {
   <html>
     <head>
       <title>UDT Recruiting Assignments</title>
+      <link rel="stylesheet" href="../server.css">
     </head>
     <body>
       <div id="app">${markup}</div>

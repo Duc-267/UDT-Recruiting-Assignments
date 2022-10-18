@@ -1,10 +1,11 @@
 import React from 'react';
-import Keypad from './components/Keypad';
-import DisplayScreen from './components/DisplayScreen';
+import Keypad from './components/Keypad/Keypad';
+import DisplayScreen from './components/DisplayScreen/DisplayScreen';
+import './Home.scss';
 
 const Home = () => {
    return (
-      <div className="calc-wrapper">
+      <div className="calculator-wrapper">
          <DisplayScreen result={'0'} />
          <Keypad />
       </div>

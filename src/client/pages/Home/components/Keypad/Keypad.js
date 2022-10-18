@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from './Button';
-import Row from './Row';
-import { ButtonColors } from '../../../utils';
+import Button from '../Button/Button';
+import Row from '../Row/Row';
+import { ButtonColors } from '../../../../utils';
 
 const Keypad = ({ addToExpression, calculateResult }) => {
    return (

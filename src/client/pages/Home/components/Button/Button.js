@@ -1,5 +1,6 @@
 import React from 'react';
-import { ButtonColors } from '../../../utils';
+import { ButtonColors } from '../../../../utils';
+import './Button.scss';
 
 const Button = ({ symbol, color = ButtonColors.LIGHT_GRAY, handleClick }) => {
    return (

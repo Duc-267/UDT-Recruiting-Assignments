@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 106px;
+}
+
+.row:last-child {
+    :first-child {
+        border-radius: 0 0 0px 20px;
+        flex: 2;
+    }
+    :not(:first-child):not(:last-child) {
+        width: 125px;
+    }
+    :last-child {
+        border-radius: 0 0 20px 0px;
+        width: 125px;
+    }
+}

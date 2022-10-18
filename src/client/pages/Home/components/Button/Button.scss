@@ -1,0 +1,15 @@
+.button-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid rgba(23, 17, 17, 0.499);
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
