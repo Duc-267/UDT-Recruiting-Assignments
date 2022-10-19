@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './History.scss';
 
 const History = () => {
-   const [calculations, setCalculations] = React.useState([]);
+   const [calculations, setCalculations] = useState([]);
    useEffect(() => {
       setCalculations(JSON.parse(localStorage.getItem('calculations')) || []);
    }, []);

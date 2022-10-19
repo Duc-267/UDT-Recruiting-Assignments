@@ -1,7 +1,6 @@
-import { Home, History } from './pages';
+import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import routes from './routes';
-import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 
 const App = () => {
