@@ -24,6 +24,7 @@ const Home = () => {
    const calculateResult = function () {
       if (expression === '') return;
       const result = eval(expression);
+      storeExpression(expression, result);
       setDisplay(result.toString());
       setExpression(result.toString());
    };
@@ -82,6 +83,17 @@ const Home = () => {
       setExpression(expression.slice(0, -display.length) + displayArray.join(''));
    };
 
+   const storeExpression = function (expression, result) {
+      const calculation = expression + ' = ' + result;
+      const storedExpressions = JSON.parse(localStorage.getItem('expressions')) || [];
+      if (storedExpressions) {
+         storedExpressions.push(calculation);
+         localStorage.setItem('expressions', JSON.stringify(storedExpressions));
+      } else {
+         localStorage.setItem('expressions', JSON.stringify([calculation]));
+      }
+   };
+
    return (
       <div className="container">
          <div className="calculator-wrapper">
@@ -94,7 +106,7 @@ const Home = () => {
                addPointToNumber={addPointToNumber}
                setPercentage={setPercentage}
                setPlusMinus={setPlusMinus}
-               isAllClear={expression.length === 0}
+               isAllClear={display === '0'}
             />
          </div>
       </div>
