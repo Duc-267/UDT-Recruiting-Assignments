@@ -85,12 +85,12 @@ const Home = () => {
 
    const storeExpression = function (expression, result) {
       const calculation = expression + ' = ' + result;
-      const storedExpressions = JSON.parse(localStorage.getItem('expressions')) || [];
-      if (storedExpressions) {
-         storedExpressions.push(calculation);
-         localStorage.setItem('expressions', JSON.stringify(storedExpressions));
+      const storedCalculations = JSON.parse(localStorage.getItem('calculations')) || [];
+      if (storedCalculations) {
+         storedCalculations.push(calculation);
+         localStorage.setItem('calculations', JSON.stringify(storedCalculations));
       } else {
-         localStorage.setItem('expressions', JSON.stringify([calculation]));
+         localStorage.setItem('calculations', JSON.stringify([calculation]));
       }
    };
 
